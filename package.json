@@ -1,0 +1,6 @@
+{
+  "dependencies": {
+    "ar-poncho": "^2.0.200",
+    "bootstrap": "^5.1.3"
+  }
+}
