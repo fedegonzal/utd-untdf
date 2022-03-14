@@ -1,0 +1,93 @@
+@import "~bootstrap/scss/bootstrap.scss";
+
+$celeste: #37BBED !default;
+$rosado: #F17BAA !default;
+
+img {
+    max-width: 100%; 
+}
+
+
+.bg-light-gray {
+    background-color: $gray-100;
+}
+
+.bg-gray {
+    background-color: $gray-200;
+}
+
+.bg-celeste {
+    background-color: $celeste;
+}
+
+.section {
+    position: relative;
+}
+
+
+.square-card {
+    border-radius: 0;
+    border: 4px $white;
+}
+
+.card-rosa .card-body {
+    background-color: $rosado;
+}
+
+.card-celeste .card-body {
+    background-color: $celeste;
+}
+
+
+.top-navbar {
+    height: 80px;
+
+    img {
+        height: 80px;
+    }
+}
+nav.navbar {
+    li {
+        a.nav-link {
+            color: $primary !important;
+            text-decoration: none;
+            font-weight: 600;
+            text-transform: uppercase;            
+        }
+    }
+
+    a.btn {
+        font-weight: 600;
+        text-transform: uppercase;            
+    }
+}
+
+
+hero {
+    display: flex;
+    height: calc(100vh - 80px);
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: top right;    
+    z-index: 9;
+    position: relative;    
+}
+
+
+footer {
+    background-color: $celeste;
+    color: $white;
+    padding: 3rem;
+
+    ul {
+        list-style: none;
+        margin-left: initial;
+
+        li {
+            a.nav-link {
+                color: $white;
+                text-decoration: none;
+            }
+        }
+    }
+}
