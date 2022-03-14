@@ -20,6 +20,13 @@ img {
     background-color: $celeste;
 }
 
+@include media-breakpoint-up(lg) {    
+    .bg-lg-light {
+        --bs-bg-opacity: 1;
+        background-color: rgba(var(--bs-light-rgb), var(--bs-bg-opacity)) !important;    
+    }
+}
+
 .section {
     position: relative;
 }
@@ -27,7 +34,11 @@ img {
 
 .square-card {
     border-radius: 0;
-    border: 4px $white;
+    border: none;
+
+    img {
+        border-radius: 0;
+    }
 }
 
 .card-rosa .card-body {
@@ -65,12 +76,39 @@ nav.navbar {
 
 hero {
     display: flex;
-    height: calc(100vh - 80px);
+    height: calc(100vh - 200px);
     background-size: contain;
     background-repeat: no-repeat;
     background-position: top right;    
     z-index: 9;
     position: relative;    
+}
+
+@include media-breakpoint-up(sm) { 
+    hero {
+        height: calc(100vh - 200px);
+    }    
+}
+@include media-breakpoint-up(md) {
+    hero {
+        height: calc(100vh - 200px);
+    }    
+}
+@include media-breakpoint-up(lg) {
+    hero {
+        height: calc(100vh - 200px);
+    }    
+}
+@include media-breakpoint-up(xl) {
+    hero {
+        height: calc(100vh - 200px);
+    }    
+}
+@include media-breakpoint-up(xxl) {
+    hero {
+        height: calc(100vh - 300px);
+        font-size: 1.4rem;
+    }    
 }
 
 
