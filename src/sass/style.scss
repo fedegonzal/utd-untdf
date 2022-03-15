@@ -76,27 +76,51 @@ nav.navbar {
 
 hero {
     display: flex;
-    height: calc(100vh - 200px);
+    //height: calc(100vh - 150px);
+    padding-bottom: 2rem;
     background-size: contain;
     background-repeat: no-repeat;
     background-position: top right;    
     z-index: 9;
     position: relative;    
+
+    .hero-title {
+        padding-top: 19rem !important;
+    }
 }
+
 
 @include media-breakpoint-up(sm) { 
     hero {
         height: calc(100vh - 200px);
+        background-position-y: -100px;
+        padding-bottom: initial;
+
+        .hero-title {
+            padding-top: 30rem !important;
+        }    
     }    
 }
 @include media-breakpoint-up(md) {
     hero {
-        height: calc(100vh - 200px);
+        height: initial;
+        background-position-y: -150px;
+        padding-bottom: 4rem;
     }    
 }
 @include media-breakpoint-up(lg) {
     hero {
         height: calc(100vh - 200px);
+        background-position-y: initial;
+        padding-bottom: initial;
+        
+        display: flex;
+        align-items: center;
+        //justify-content: center;
+
+        .hero-title {
+            padding-top: initial !important;
+        }
     }    
 }
 @include media-breakpoint-up(xl) {
