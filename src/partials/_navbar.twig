@@ -2,12 +2,12 @@
   <div class="container">
     <div class="row">    
       <div class="col d-flex justify-content-start">
-        <img src="./images/logo-min-prod.png" class="p-3">
-        <img src="./images/logo-utd.png" class="p-3">
+        <img src="{{theme.link}}/src/images/logo-min-prod.png" class="p-3">
+        <img src="{{theme.link}}/src/images/logo-utd.png" class="p-3">
       </div>
       <div class="col d-flex justify-content-end">
-        <img src="./images/logo-untdf.png" class="p-3">
-        <img src="./images/logo-idei.png" class="p-3">
+        <img src="{{theme.link}}/src/images/logo-untdf.png" class="p-3">
+        <img src="{{theme.link}}/src/images/logo-idei.png" class="p-3">
       </div>
     </div>
   </div>
@@ -20,12 +20,12 @@
       <span class="navbar-toggler-icon"></span>
     </button>
 
-    <img src="./images/logo-utd.png" class="p-3 d-block d-lg-none" style="height: 65px;">
+    <img src="{{theme.link}}/src/images/logo-utd.png" class="p-3 d-block d-lg-none" style="height: 65px;">
 
     <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">        
-        {% include "./components/_navmenu.twig" %}
+        {% include "./partials/components/_navmenu.twig" %}
     </div>
 
-    <a class="btn btn-success" href="#" role="button">Participá</a>
+    <a class="btn btn-success" href="http://localhost/utd-untdf/wordpress/acceso-pymes/" role="button">Participá</a>
   </div>
 </nav>

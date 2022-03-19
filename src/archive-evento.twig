@@ -1,0 +1,44 @@
+{% extends "partials/_base.twig" %}
+
+{% block body %}
+
+    {% include "partials/_navbar.twig" %}
+
+<div class="py-5 p-lg-5 section">
+    <div class="container">
+        <div class="row">
+            <div class="col-3 col-lg-1">
+                <img src="{{theme.link}}/src/images/icon-eventos.png">
+            </div>
+            <div class="col-9 col-lg-3 mb-5">
+                <h2>Próximos eventos</h2>   
+                <p>Conocé todo lo que se viene, participá con tu PYME y capacitate para mejorar día a día.</p> 
+                <p>En un mundo cambiante, lo mejor es mantenerse en acción.</p>
+            </div>
+
+            {% for index, item in eventos %}                
+                <div class="col-md-6 col-lg-4 mb-3">
+                    {% include "./partials/components/_square_card.twig" with 
+                        {
+                            'css': index is odd ? 'card-celeste' : 'card-rosa', 
+                            'src_img': Image(item.imagen).src('large'),
+                            'subtitle': item.subtitulo,
+                            'title': item.title,
+                            'href': item.link
+                        } 
+                    %}
+                </div>
+            {% endfor %}
+            
+        </div>
+    </div>    
+</div>
+
+    {% include "partials/_home_participa.twig" %}
+    {% include "partials/_footer.twig" %}
+
+{% endblock %}
+
+{% block scripts %}
+    <script src="js/index.js"></script>
+{% endblock %}

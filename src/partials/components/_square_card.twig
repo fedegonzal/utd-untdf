@@ -1,7 +1,12 @@
-<div class="card card-h100 square-card mb-3 {{css}}" style="{{style}}">
-    <div class="card-body">
+
+<div class="card h-100 square-card">
+    <div class="card-header {{css}}">
       <p class="card-text text-white">{{subtitle}}</p>
-      <h3 class="card-title">{{title}}</h3>
+      <h3 class="card-title"><a href="{{href}}" class="stretched-link text-decoration-none text-black">{{title}}</a></h3>
     </div>
-    <img src="{{src_img}}" class="card-img-bottom">
+    <div class="card-body" style="background-image: url({{src_img}});">
+      {% if date %}
+        <div class="card-date">{{date}}</div>
+      {% endif %}
+    </div>
 </div>

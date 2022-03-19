@@ -1,14 +1,27 @@
 <!DOCTYPE html>
 <html lang="es-AR">
 <head>
-    {% include "_head.twig" %}
+
+    {{function('wp_head')}}
+    <meta charset="{{ site.charset }}" />
+    <meta name="description" content="{{ site.description }}">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="author" href="{{ site.theme.link }}/humans.txt" />
+    <link rel="pingback" href="{{ site.pingback_url }}" />
+
+    {% include "./partials/_head.twig" %}
+
     {% block styles %}{% endblock %}
 </head>
 <body>
     {% block body %}{% endblock %}
 
-    {% include "_body_scripts.twig" %}
+    {% include "./partials/_body_scripts.twig" %}
 
     {% block scripts %}{% endblock %}
+
+    {{function('wp_footer')}}
 </body>
 </html>

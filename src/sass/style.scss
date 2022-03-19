@@ -1,12 +1,92 @@
+/* Categories 01 to 03 are the basics. */
+// @import "twentytwentyone/01-settings/file-header";
+// @import "twentytwentyone/01-settings/fonts";
+@import "twentytwentyone/01-settings/global";
+
+@import "twentytwentyone/02-tools/mixins";
+@import "twentytwentyone/02-tools/functions";
+
+@import "twentytwentyone/03-generic/normalize";
+@import "twentytwentyone/03-generic/breakpoints";
+@import "twentytwentyone/03-generic/vertical-margins";
+@import "twentytwentyone/03-generic/reset";
+@import "twentytwentyone/03-generic/clearings";
+
+/* Category 04 can contain any default HTML element. Do not add classes here, just give the elements some basic styles. */
+// @import "twentytwentyone/04-elements/blockquote";
+// @import "twentytwentyone/04-elements/forms";
+// @import "twentytwentyone/04-elements/media";
+// @import "twentytwentyone/04-elements/misc";
+// @import "twentytwentyone/04-elements/links";
+
+/* Category 05 is all about adjusting the default block styles to the given layout. I only added three blocks as examples. */
+@import "twentytwentyone/05-blocks/blocks";
+
+/* Category 06 contains all "bigger" components which contain elements of the previous two categories like header, footer, page template, single template, comments section, archives, ... */
+// @import "twentytwentyone/06-components/header";
+// @import "twentytwentyone/06-components/footer";
+// @import "twentytwentyone/06-components/single";
+// @import "twentytwentyone/06-components/posts-and-pages";
+// @import "twentytwentyone/06-components/entry";
+// @import "twentytwentyone/06-components/archives";
+// @import "twentytwentyone/06-components/404";
+// @import "twentytwentyone/06-components/search";
+// @import "twentytwentyone/06-components/comments";
+// @import "twentytwentyone/06-components/navigation";
+// @import "twentytwentyone/06-components/footer-navigation";
+// @import "twentytwentyone/06-components/pagination";
+// @import "twentytwentyone/06-components/widgets";
+
+/* Category 07 is for any utility classes that are not assigned to a specific component. */
+// @import "twentytwentyone/07-utilities/a11y";
+// @import "twentytwentyone/07-utilities/color-palette";
+// @import "twentytwentyone/07-utilities/measure";
+// @import "twentytwentyone/07-utilities/ie";
+
+
+
+
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;0,900;1,400;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Encode+Sans:wght@400;600&display=swap');
+
+
 @import "~bootstrap/scss/bootstrap.scss";
+
+
+:root {
+    --global--color-primary: var(--bs-primary);
+    --global--color-secondary: var(--bs-secondary);
+    --global--color-primary-hover: shift-color(var(--global--color-primary), $link-shade-percentage);
+    --global--color-background: var(--bs-white);
+    --global--color-border: var(--global--color-primary);
+}
+
 
 $celeste: #37BBED !default;
 $rosado: #F17BAA !default;
 
+
+html, body, p {
+    font-family: 'Roboto', sans-serif;
+    font-weight: 400;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Encode Sans', sans-serif;
+    font-weight: 600;
+}
+
+strong, b {
+    font-weight: 900;
+}
+
+.entry-content {
+    margin-top: 0;
+}
+
 img {
     max-width: 100%; 
 }
-
 
 .bg-light-gray {
     background-color: $gray-100;
@@ -39,15 +119,35 @@ img {
     img {
         border-radius: 0;
     }
+    
+    .card-body {
+        min-height: 200px;
+        background-size: cover;
+    }
+    
+    .card-body, .card-header, .card-footer {
+        border-radius: 0;
+        border: none;    
+    }
+
+    .card-header.card-rosa {
+        background-color: $rosado;
+    }
+    
+    .card-header.card-celeste {
+        background-color: $celeste;
+    }
+
+    .card-date {
+        position: absolute;
+        bottom: 1rem;
+        right: 0;
+        padding: 0.5rem 1rem;
+        background: black;
+        color: white;
+    }
 }
 
-.card-rosa .card-body {
-    background-color: $rosado;
-}
-
-.card-celeste .card-body {
-    background-color: $celeste;
-}
 
 
 .top-navbar {
@@ -140,6 +240,7 @@ footer {
     background-color: $celeste;
     color: $white;
     padding: 3rem;
+    margin-bottom: 0 !important;
 
     ul {
         list-style: none;

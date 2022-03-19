@@ -2,31 +2,36 @@
     <div class="container">
         <div class="row">
             <div class="col-3 col-lg-1">
-                <img src="images/icon-eventos.png">
+                <img src="{{theme.link}}/src/images/icon-eventos.png">
             </div>
             <div class="col-9 col-lg-3 mb-5">
                 <h2>Próximos eventos</h2>   
                 <p>Conocé todo lo que se viene, participá con tu PYME y capacitate para mejorar día a día.</p> 
                 <p>En un mundo cambiante, lo mejor es mantenerse en acción.</p>
-                <a href="#">Ver todos</a>
+                <a href="{{site.link}}/eventos/">Ver todos</a>
             </div>
-            <div class="col-md-6 col-lg-4">
-                {% include "./components/_square_card.twig" with 
+            
+            <div class="col-md-6 col-lg-4 mb-3">
+                {% include "./partials/components/_square_card.twig" with 
                     {
                         'css': 'card-rosa', 
-                        'src_img': 'images/img3.png',
-                        'subtitle': 'Taller de trabajo',
-                        'title': 'Las organizaciones como espacio para el desarrollo tecnológico'
+                        'src_img': Image(eventos[0].imagen).src('large'),
+                        'subtitle': eventos[0].subtitulo,
+                        'title': eventos[0].title,
+                        'href': eventos[0].link,
+                        'date': eventos[0].fecha
                     } 
                 %}
             </div>
-            <div class="col-md-6 col-lg-4">
-                {% include "./components/_square_card.twig" with 
+            <div class="col-md-6 col-lg-4 mb-3">
+                {% include "./partials/components/_square_card.twig" with 
                     {
                         'css': 'card-celeste', 
-                        'src_img': 'images/img3.png',
-                        'subtitle': 'Taller de trabajo',
-                        'title': 'Pensar en marketing. Mercados globales y cambio constante'
+                        'src_img': Image(eventos[1].imagen).src('large'),
+                        'subtitle': eventos[1].subtitulo,
+                        'title': eventos[1].title,
+                        'href': eventos[1].link,
+                        'date': eventos[1].fecha
                     } 
                 %}
             </div>

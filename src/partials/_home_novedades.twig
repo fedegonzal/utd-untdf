@@ -2,31 +2,33 @@
     <div class="container">
         <div class="row">
             <div class="col-3 col-lg-1 order-lg-3">
-                <img src="images/icon-novedades.png">            
+                <img src="{{theme.link}}/src/images/icon-novedades.png">            
             </div>
             <div class="col-9 col-lg-3 mb-5 order-lg-4">
                 <h2>Novedades</h2>   
                 <p>Estamos haciendo muchas cosas, por eso aquí te compartimos lo que pasó y te facilitamos información que puede interesarte.</p>
                 <p>¡Participá de esta creciente comunidad para potenciar las pequeñas empresas de la Patagonia Sur!</p>
-                <a href="#">Ver todas</a>
+                <a href="{{site.link}}/novedades/">Ver todas</a>
             </div>
-            <div class="col-md-6 col-lg-4">
-                {% include "./components/_square_card.twig" with 
+            <div class="col-md-6 col-lg-4 mb-3">
+                {% include "./partials/components/_square_card.twig" with 
                     {
                         'css': 'card-rosa', 
-                        'src_img': 'images/img3.png',
-                        'subtitle': 'Taller de trabajo',
-                        'title': 'Las organizaciones como espacio para el desarrollo tecnológico'
+                        'src_img': Image(novedades[0].imagen).src('large'),
+                        'subtitle': novedades[0].subtitulo,
+                        'title': novedades[0].title,
+                        'href': novedades[0].link
                     } 
                 %}
             </div>
-            <div class="col-md-6 col-lg-4">
-                {% include "./components/_square_card.twig" with 
+            <div class="col-md-6 col-lg-4 mb-3">
+                {% include "./partials/components/_square_card.twig" with 
                     {
                         'css': 'card-celeste', 
-                        'src_img': 'images/img3.png',
-                        'subtitle': 'Taller de trabajo',
-                        'title': 'Pensar en marketing. Mercados globales y cambio constante'
+                        'src_img': Image(novedades[1].imagen).src('large'),
+                        'subtitle': novedades[1].subtitulo,
+                        'title': novedades[1].title,
+                        'href': novedades[1].link
                     } 
                 %}
             </div>
