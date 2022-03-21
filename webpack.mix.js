@@ -4,6 +4,8 @@ mix.setPublicPath('./dist')
 
 mix.js('./src/js/pages/index.js', 'js').extract(['react', 'react-dom']).react();
 
+mix.js('src/js/index.js', 'js');
+
 mix.sass('./src/sass/style.scss', 'css');
 
 if (mix.inProduction()) {
@@ -11,4 +13,3 @@ if (mix.inProduction()) {
 }
 
 mix.copyDirectory('./src/images', './dist/images');
-
