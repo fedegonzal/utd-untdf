@@ -102,6 +102,11 @@ img {
     background-color: $celeste;
 }
 
+.navbar-toggler, .navbar-toggler:active, .navbar-toggler:focus, .navbar-toggler:focus-visible {
+    background-color: transparent !important;
+    border: none;
+}
+
 .btn_top, .btn_top:hover {
     position: fixed;
     bottom: 1rem;
