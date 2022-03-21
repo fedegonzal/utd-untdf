@@ -69,6 +69,8 @@ $rosado: #F17BAA !default;
 html, body, p {
     font-family: 'Roboto', sans-serif;
     font-weight: 400;
+    scroll-behavior: smooth;
+    position: relative;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -99,6 +101,23 @@ img {
 .bg-celeste {
     background-color: $celeste;
 }
+
+.btn_top, .btn_top:hover {
+    position: fixed;
+    bottom: 1rem;
+    right: 1rem;
+    color: $white;
+    background: $success;
+    width: 50px;
+    height: 50px;
+    z-index: 99999;
+    display: block;
+    border-radius: 50%;
+    line-height: 50px;
+    text-align: center;    
+    font-size: 24px;
+}
+
 
 @include media-breakpoint-up(lg) {    
     .bg-lg-light {
